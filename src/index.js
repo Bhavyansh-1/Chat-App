@@ -44,7 +44,7 @@ io.on('connection',(socket)=>{
         const user=removeUsers(socket.id)
         if(user)
         {
-            io.to(user.room).emit('message',generateMessages(`${user.username} been disconnected`,'Admin'))
+            io.to(user.room).emit('message',generateMessages(`${user.username} got disconnected`,'Admin'))
             io.to(user.room).emit('room-data',{
                 room:user.room,
                 users:getUsersByRoom(user.room)  
